@@ -6,7 +6,7 @@ import {
   onAuthStateChanged,
   signInWithPopup,
   signOut,
-} from "./firebase-config";
+} from "./firebase";
 import { AuthContext } from "./hooks/useAuth";
 
 export const AuthProvider = ({ children }) => {
