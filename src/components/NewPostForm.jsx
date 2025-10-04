@@ -40,17 +40,14 @@ const NewPostForm = () => {
   };
 
   if (!currentUser) {
-    return (
-      <div className="mx-auto my-6 w-full max-w-2xl rounded-2xl border-l-4 border-yellow-500 bg-yellow-100 p-4 text-yellow-700">
-        <p className="font-bold">Login Required</p>
-        <p>Please sign in to create new blog posts.</p>
-      </div>
-    );
+    return null;
   }
 
   return (
-    <div className="container mx-auto my-8 w-full max-w-2xl rounded-2xl p-6 shadow-md">
-      <h2 className="mb-6 text-center text-3xl font-bold">Create a New Post</h2>
+    <div className="mx-auto mt-6 mb-8 w-full max-w-2xl rounded-3xl bg-white p-8 shadow-xl">
+      <h2 className="mb-8 text-center text-3xl font-bold text-neutral-800">
+        Create a New Post
+      </h2>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <textarea
@@ -58,19 +55,19 @@ const NewPostForm = () => {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             rows="6"
-            className="w-full resize-y rounded-2xl border border-neutral-200 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-            placeholder="Write your blog post content here..."
+            className="w-full resize-y rounded-xl border border-neutral-300 px-5 py-4 text-lg text-neutral-800 placeholder-neutral-500 transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            placeholder="Share your thoughts, insights, or stories..."
             required
             disabled={loading}
           ></textarea>
         </div>
-        {error && <p className="text-sm text-red-600">{error}</p>}
+        {error && <p className="text-base font-medium text-red-600">{error}</p>}
         <button
           type="submit"
-          className="w-full rounded-2xl bg-blue-600 px-4 py-3 font-bold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+          className="w-full rounded-full bg-blue-600 px-6 py-3.5 text-lg font-semibold text-white transition-all duration-200 hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
           disabled={loading}
         >
-          {loading ? "Posting..." : "Publish Post"}
+          {loading ? "Publishing..." : "Publish Post"}
         </button>
       </form>
     </div>

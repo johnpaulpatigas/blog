@@ -33,7 +33,7 @@ const PostList = () => {
 
   if (loading) {
     return (
-      <div className="container mx-auto my-8 p-6 text-center text-lg text-neutral-500">
+      <div className="mx-auto my-12 py-16 text-center text-2xl font-light text-neutral-500">
         Loading posts...
       </div>
     );
@@ -41,16 +41,16 @@ const PostList = () => {
 
   if (error) {
     return (
-      <div className="container mx-auto my-8 w-full max-w-2xl rounded-2xl border-l-4 border-red-500 bg-red-100 p-6 text-red-700">
-        <p className="font-bold">Error:</p>
-        <p>{error}</p>
+      <div className="mx-auto my-8 w-full max-w-2xl rounded-xl border border-red-200 bg-red-50 p-6 text-red-800 shadow-sm">
+        <p className="mb-2 text-xl font-bold">Error:</p>
+        <p className="text-lg">{error}</p>
       </div>
     );
   }
 
   if (posts.length === 0) {
     return (
-      <div className="container mx-auto my-8 p-6 text-center text-xl text-neutral-500">
+      <div className="mx-auto my-12 py-16 text-center text-2xl font-light text-neutral-500">
         No posts yet! Be the first to publish.
       </div>
     );
@@ -58,7 +58,9 @@ const PostList = () => {
 
   return (
     <div className="container mx-auto my-8">
-      <h2 className="mb-8 text-center text-3xl font-bold">Recent Posts</h2>
+      <h2 className="mb-10 text-center text-3xl font-bold text-neutral-800">
+        Recent Posts
+      </h2>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
           <PostCard key={post.id} post={post} />

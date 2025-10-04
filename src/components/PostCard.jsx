@@ -28,9 +28,11 @@ const PostCard = ({ post }) => {
     : "Date N/A";
 
   return (
-    <div className="rounded-2xl border-b-4 border-blue-500 bg-white p-6 shadow-md transition hover:shadow-lg">
-      <p className="mb-4 break-words">{post.content}</p>
-      <div className="flex items-center justify-between text-sm text-neutral-500">
+    <div className="rounded-2xl bg-white p-7 shadow-lg transition-all duration-300 hover:shadow-xl">
+      <p className="mb-4 text-lg leading-relaxed break-words text-neutral-800">
+        {post.content}
+      </p>
+      <div className="flex items-center justify-between text-sm text-neutral-600">
         <span>
           By{" "}
           <span className="font-semibold text-blue-600">{post.authorName}</span>{" "}
@@ -39,7 +41,7 @@ const PostCard = ({ post }) => {
         {currentUser && currentUser.uid === post.authorId && (
           <button
             onClick={handleDelete}
-            className="rounded-2xl border border-red-400 px-3 py-1 font-semibold text-red-500 transition hover:border-red-700 hover:text-red-700"
+            className="rounded-full bg-red-50 px-3 py-1 text-sm font-medium text-red-600 transition-all duration-200 hover:bg-red-100 hover:text-red-700"
           >
             Delete
           </button>
