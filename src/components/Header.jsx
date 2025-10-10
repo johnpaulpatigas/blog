@@ -29,7 +29,7 @@ const Header = ({ toggleNewPostForm, showNewPostForm, setShowNewPostForm }) => {
                     : "bg-blue-600 text-white hover:bg-blue-700"
                 }`}
               >
-                {showNewPostForm ? "Cancel" : "Create Post"}
+                {showNewPostForm ? "Cancel" : "Create"}
               </button>
 
               <span className="text-lg font-medium text-neutral-700">
