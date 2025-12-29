@@ -33,7 +33,6 @@ const NewPostForm = ({ onCancel }) => {
         content,
         authorId: currentUser.uid,
         authorName: currentUser.displayName,
-        authorPhoto: currentUser.photoURL,
         createdAt: serverTimestamp(),
       });
       setContent("");
